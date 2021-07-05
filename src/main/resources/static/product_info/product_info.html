@@ -4,26 +4,25 @@
 
 <div class="container bootdey">
     <div class="col-md-12 bootstrap snippets">
-        <div class="panel">
+        <div class="panel" ng-show="isUserLoggedIn()">
             <div class="panel-body">
-                <textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
-                <div class="mar-top clearfix">
-                    <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Share</button>
-                    <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
-                    <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>
-                    <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>
-                </div>
+                <form ng-submit="share()">
+                    <textarea ng-model="comment" class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
+                    <div class="mar-top clearfix">
+                        <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Share</button>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="panel">
             <div class="panel-body">
-                <div class="media-block">
+                <div ng-repeat="c in comments" class="media-block">
                     <a class="media-left"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
                     <div class="media-body">
                         <div class="mar-btm">
-                            <a class="btn-link text-semibold media-heading box-inline">Lisa D.</a>
+                            <a class="btn-link text-semibold media-heading box-inline">{{c.username}}</a>
                         </div>
-                        <p>consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                        <p>{{c.comment}}</p>
                         <hr>
                     </div>
                 </div>
