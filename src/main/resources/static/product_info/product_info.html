@@ -1,3 +1,32 @@
 <p></p>
 <h3>Информация о товаре</h3>
 <h5>{{prod.title}}</h5>
+
+<div class="container bootdey">
+    <div class="col-md-12 bootstrap snippets">
+        <div class="panel" ng-show="isUserLoggedIn()">
+            <div class="panel-body">
+                <form ng-submit="share()">
+                    <textarea ng-model="comment" class="form-control" rows="2" placeholder="Отзыв о товаре:"></textarea>
+                    <div class="mar-top clearfix">
+                        <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Поделиться</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-body">
+                <div ng-repeat="c in comments" class="media-block">
+                    <a class="media-left"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
+                    <div class="media-body">
+                        <div class="mar-btm">
+                            <a class="btn-link text-semibold media-heading box-inline">{{c.username}}</a>
+                        </div>
+                        <p>{{c.comment}}</p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
