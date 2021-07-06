@@ -1,11 +1,6 @@
 package ru.geekbrains.april.market.dtos;
 
 import lombok.Data;
-import ru.geekbrains.april.market.utils.Cart;
-
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Data
 public class UserDto {

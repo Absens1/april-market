@@ -12,7 +12,6 @@ import ru.geekbrains.april.market.models.Category;
 import ru.geekbrains.april.market.models.Product;
 import ru.geekbrains.april.market.repositories.ProductRepository;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,10 +19,6 @@ import java.util.Optional;
 public class ProductService {
     private final ProductRepository productRepository;
     private final CategoryService categoryService;
-
-//    public Page<Product> findPage(int page, int pageSize) {
-//        return productRepository.findAllBy(PageRequest.of(page, pageSize));
-//    }
 
     public Page<ProductDto> findAll(Specification<Product> spec, int page, int pageSize) {
         return productRepository.findAll(spec, PageRequest.of(page - 1, pageSize)).map(ProductDto::new);

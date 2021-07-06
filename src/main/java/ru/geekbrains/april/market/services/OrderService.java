@@ -1,21 +1,16 @@
 package ru.geekbrains.april.market.services;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import ru.geekbrains.april.market.dtos.OrderItemDto;
-import ru.geekbrains.april.market.dtos.ProductDto;
-import ru.geekbrains.april.market.error_handling.ResourceNotFoundException;
-import ru.geekbrains.april.market.models.*;
+import ru.geekbrains.april.market.models.Order;
+import ru.geekbrains.april.market.models.OrderItem;
+import ru.geekbrains.april.market.models.User;
 import ru.geekbrains.april.market.repositories.OrderRepository;
-import ru.geekbrains.april.market.repositories.ProductRepository;
 import ru.geekbrains.april.market.utils.Cart;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -33,7 +28,6 @@ public class OrderService {
         order.setUser(user);
         Cart cart = cartService.getCurrentCart(user.getUsername());
         order.setPrice(cart.getSum());
-        // todo распутать этот кусок
         order.setItems(new ArrayList<>());
         for (OrderItemDto o : cart.getItems()) {
             OrderItem orderItem = new OrderItem();

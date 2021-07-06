@@ -1,7 +1,6 @@
 package ru.geekbrains.april.market.controllers;
 
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.web.bind.annotation.*;
 import ru.geekbrains.april.market.dtos.CommentDto;
 import ru.geekbrains.april.market.models.User;
@@ -25,7 +24,7 @@ public class CommentController {
     }
 
     @PostMapping
-    public CommentDto createNewComment(Principal principal, @RequestParam Long productId, @RequestParam String comment) throws Exception {
+    public CommentDto createNewComment(Principal principal, @RequestParam Long productId, @RequestParam String comment) {
         User user = userService.findByUsername(principal.getName()).get();
         return commentService.createNewComment(user, productId, comment);
     }

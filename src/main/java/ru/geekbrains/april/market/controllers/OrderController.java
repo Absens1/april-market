@@ -2,21 +2,13 @@ package ru.geekbrains.april.market.controllers;
 
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import ru.geekbrains.april.market.dtos.OrderDto;
-import ru.geekbrains.april.market.dtos.ProductDto;
-import ru.geekbrains.april.market.error_handling.InvalidDataException;
-import ru.geekbrains.april.market.error_handling.ResourceNotFoundException;
-import ru.geekbrains.april.market.models.Order;
-import ru.geekbrains.april.market.models.Product;
 import ru.geekbrains.april.market.models.User;
 import ru.geekbrains.april.market.services.OrderService;
-import ru.geekbrains.april.market.services.ProductService;
 import ru.geekbrains.april.market.services.UserService;
 
 import javax.transaction.Transactional;
