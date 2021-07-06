@@ -2,18 +2,13 @@ package ru.geekbrains.april.market.controllers;
 
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import ru.geekbrains.april.market.error_handling.MarketError;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import ru.geekbrains.april.market.error_handling.ResourceNotFoundException;
 import ru.geekbrains.april.market.models.Category;
-import ru.geekbrains.april.market.models.Product;
 import ru.geekbrains.april.market.services.CategoryService;
-import ru.geekbrains.april.market.services.ProductService;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor

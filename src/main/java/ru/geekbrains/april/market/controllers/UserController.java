@@ -3,7 +3,6 @@ package ru.geekbrains.april.market.controllers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-import ru.geekbrains.april.market.dtos.JwtResponse;
 import ru.geekbrains.april.market.dtos.UserDto;
 import ru.geekbrains.april.market.error_handling.ResourceNotFoundException;
 import ru.geekbrains.april.market.models.User;

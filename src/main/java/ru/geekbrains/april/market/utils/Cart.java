@@ -1,23 +1,11 @@
 package ru.geekbrains.april.market.utils;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
-import org.springframework.stereotype.Component;
-import org.springframework.web.context.WebApplicationContext;
 import ru.geekbrains.april.market.dtos.OrderItemDto;
-import ru.geekbrains.april.market.dtos.ProductDto;
-import ru.geekbrains.april.market.error_handling.ResourceNotFoundException;
-import ru.geekbrains.april.market.models.OrderItem;
 import ru.geekbrains.april.market.models.Product;
-import ru.geekbrains.april.market.services.ProductService;
 
-import javax.annotation.PostConstruct;
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
