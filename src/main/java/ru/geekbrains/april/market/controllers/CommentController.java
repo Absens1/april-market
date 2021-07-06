@@ -24,7 +24,7 @@ public class CommentController {
     }
 
     @PostMapping
-    public CommentDto createNewComment(Principal principal, @RequestParam Long productId, @RequestParam String comment) throws Exception {
+    public CommentDto createNewComment(Principal principal, @RequestParam Long productId, @RequestParam String comment) {
         User user = userService.findByUsername(principal.getName()).get();
         return commentService.createNewComment(user, productId, comment);
     }

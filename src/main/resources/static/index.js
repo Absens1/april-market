@@ -56,7 +56,6 @@ angular.module('app').controller('indexController', function ($scope, $http, $lo
     const contextPath = 'http://localhost:8189/market';
 
     $scope.mergeCarts = function () {
-        console.log('ready');
         $http({
             url: contextPath + '/api/v1/cart/merge',
             method: 'GET',
@@ -64,7 +63,6 @@ angular.module('app').controller('indexController', function ($scope, $http, $lo
                 'cartId': $localStorage.aprilCartId
             }
         }).then(function (response) {
-            console.log('ready');
         });
     }
 

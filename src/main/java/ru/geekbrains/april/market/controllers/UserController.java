@@ -22,9 +22,4 @@ public class UserController {
         User currentUser = userService.findByUsername(principal.getName()).orElseThrow(() -> new ResourceNotFoundException("User doesn't exist"));
         return new UserDto(currentUser.getUsername(), currentUser.getEmail());
     }
-
-    @PostMapping("/register") // todo заменить при решении домашнего задания
-    public void register(@RequestBody UserDto userDto) {
-        userDto.setEmail(passwordEncoder.encode(userDto.getEmail())); // encode email to bcrypt
-    }
 }

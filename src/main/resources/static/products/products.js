@@ -21,7 +21,6 @@ angular.module('app').controller('productsController', function ($scope, $http, 
             }
         }).then(function (response) {
             $scope.productsPage = response.data;
-            console.log($scope.productsPage);
 
             let minPageIndex = page - 2;
             if (minPageIndex < 1) {

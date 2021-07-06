@@ -21,24 +21,9 @@ angular.module('app', ['ngStorage']).controller('indexController', function ($sc
             if (maxPageIndex > $scope.productsPage.totalPages) {
                 maxPageIndex = $scope.productsPage.totalPages;
             }
-
             $scope.paginationArray = $scope.generatePagesIndexes(minPageIndex, maxPageIndex);
-
-            console.log("PAGE FROM BACKEND")
-            console.log($scope.productsPage);
         });
     };
-
-    // $scope.createNewProduct = function () {
-    //     $http.post(contextPath + '/api/v1/products', $scope.newProduct)
-    //         .then(function successCallback(response) {
-    //             $scope.loadPage(1);
-    //             $scope.newProduct = null;
-    //         }, function errorCallback(response) {
-    //             console.log(response.data);
-    //             alert('Error: ' + response.data.messages);
-    //         });
-    // };
 
     $scope.loadCart = function (page) {
         $http({

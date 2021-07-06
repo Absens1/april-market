@@ -28,7 +28,6 @@ public class OrderService {
         order.setUser(user);
         Cart cart = cartService.getCurrentCart(user.getUsername());
         order.setPrice(cart.getSum());
-        // todo распутать этот кусок
         order.setItems(new ArrayList<>());
         for (OrderItemDto o : cart.getItems()) {
             OrderItem orderItem = new OrderItem();
